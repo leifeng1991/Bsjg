@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".ui.TaskRecordListActivity">
+
+        <View
+            android:id="@+id/mBgView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="#4D65B651"
+            app:layout_constraintBottom_toBottomOf="@+id/mMonthLayout"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.ruffian.library.widget.RTextView
+            android:id="@+id/mBackTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sw_120dp"
+            android:layout_marginTop="@dimen/sw_136dp"
+            android:gravity="center"
+            android:minWidth="@dimen/sw_400dp"
+            android:paddingTop="@dimen/sw_20dp"
+            android:paddingBottom="@dimen/sw_20dp"
+            android:text="返回"
+            android:textSize="@dimen/sw_60sp"
+            app:border_color_normal="#65B651"
+            app:border_width_normal="@dimen/sw_4dp"
+            app:corner_radius="@dimen/sw_11dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:text_color_normal="#ff65b651" />
+
+        <com.ruffian.library.widget.RLinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/sw_68dp"
+            android:orientation="horizontal"
+            app:background_normal="#65B651"
+            app:corner_radius="@dimen/sw_11dp"
+            app:layout_constraintBottom_toBottomOf="@+id/mBackTextView"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/mBackTextView">
+
+            <TextView
+                android:id="@+id/mHomeTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/sw_74dp"
+                android:paddingTop="@dimen/sw_20dp"
+                android:paddingEnd="@dimen/sw_39dp"
+                android:paddingBottom="@dimen/sw_20dp"
+                android:text="首页"
+                android:textColor="#ffffffff"
+                android:textSize="@dimen/sw_60sp" />
+
+            <View
+                android:layout_width="@dimen/sw_5dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/sw_36dp"
+                android:layout_marginBottom="@dimen/sw_36dp"
+                android:background="@color/white" />
+
+            <TextView
+                android:id="@+id/mLackCardQueriesTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="@dimen/sw_53dp"
+                android:paddingTop="@dimen/sw_20dp"
+                android:paddingEnd="@dimen/sw_73dp"
+                android:paddingBottom="@dimen/sw_20dp"
+                android:text="缺卡查询"
+                android:textColor="#ffffffff"
+                android:textSize="@dimen/sw_60sp" />
+
+        </com.ruffian.library.widget.RLinearLayout>
+
+        <LinearLayout
+            android:id="@+id/mMonthLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/mBackTextView">
+
+
+        </LinearLayout>
+
+        <com.moufans.lib_base.base.recyclerview.MyRecyclerView
+            android:id="@+id/mTaskRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mBgView" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

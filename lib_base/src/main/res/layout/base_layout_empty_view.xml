@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/mEmptyViewRootView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <FrameLayout
+            android:id="@+id/mEmptyViewContentLayoutFl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/mEmptyViewFailedLayoutLl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/mEmptyViewStateHintTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="10dp"
+                    android:gravity="center_horizontal"
+                    android:text="暂无数据哦～"
+                    android:textColor="#888888"
+                    android:textSize="14sp"
+                    app:drawableTopCompat="@mipmap/base_ic_launcher" />
+
+                <com.ruffian.library.widget.RTextView
+                    android:id="@+id/mEmptyViewRefreshBtnTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="1dp"
+                    android:paddingLeft="50dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="50dp"
+                    android:paddingBottom="10dp"
+                    android:text="刷一刷"
+                    android:textColor="#ff725c"
+                    android:textSize="13sp"
+                    app:border_color_normal="#ff725c"
+                    app:border_width_normal="@dimen/base_dp1"
+                    app:corner_radius="@dimen/base_dp20" />
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/mEmptyViewSuccessNoDataLayoutFl"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+        </FrameLayout>
+
+    </androidx.core.widget.NestedScrollView>
+</layout>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mHeaderBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/base_dp44"
+        android:background="#fff">
+
+        <ImageView
+            android:id="@+id/mLeftIv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/base_dp14"
+            android:paddingTop="@dimen/base_dp12"
+            android:paddingRight="@dimen/base_dp14"
+            android:paddingBottom="@dimen/base_dp12"
+            android:src="@mipmap/base_ic_left_back"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/mTitleTv"
+            android:layout_width="@dimen/base_dp0"
+            android:layout_height="@dimen/base_dp44"
+            android:layout_marginLeft="@dimen/base_dp80"
+            android:layout_marginRight="@dimen/base_dp80"
+            android:gravity="center"
+            android:textColor="#4A4A4A"
+            android:textSize="18sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="标题" />
+
+        <ImageView
+            android:id="@+id/mRightLeftImageView"
+            android:layout_width="@dimen/base_dp20"
+            android:layout_height="@dimen/base_dp20"
+            android:layout_marginEnd="@dimen/base_dp20"
+            android:layout_marginRight="@dimen/base_dp20"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/mRightRightImageView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_goneMarginRight="@dimen/base_dp10" />
+
+        <ImageView
+            android:id="@+id/mRightRightImageView"
+            android:layout_width="@dimen/base_dp20"
+            android:layout_height="@dimen/base_dp20"
+            android:layout_marginEnd="@dimen/base_dp20"
+            android:layout_marginRight="@dimen/base_dp20"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/mRightTv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingLeft="@dimen/base_dp13"
+            android:paddingRight="@dimen/base_dp13"
+            android:textColor="#ff333333"
+            android:textSize="12sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="发票信息管理" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

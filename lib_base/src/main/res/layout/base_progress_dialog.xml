@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <com.ruffian.library.widget.RLinearLayout
+        android:id="@+id/m_root_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="40dp"
+        app:background_normal="@color/base_color_7f000000"
+        app:corner_radius="@dimen/base_dp8">
+
+        <ImageView
+            android:id="@+id/mLoadingIV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/base_progress_dialog_anim" />
+
+    </com.ruffian.library.widget.RLinearLayout>
+</layout>

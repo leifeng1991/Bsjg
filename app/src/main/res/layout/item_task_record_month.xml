@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/mMonthTextView"
+            android:layout_width="@dimen/sw_312dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingTop="@dimen/sw_23dp"
+            android:paddingBottom="@dimen/sw_43dp"
+            android:text="1月"
+            android:textColor="#ff65b651"
+            android:textSize="@dimen/sw_80sp" />
+    </FrameLayout>
+</layout>

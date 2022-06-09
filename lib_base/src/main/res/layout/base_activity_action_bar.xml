@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <RelativeLayout
+        android:id="@+id/rl_actionbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/base_dp44"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/iv_left"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="@dimen/base_dp5"
+            android:paddingTop="@dimen/base_dp13"
+            android:paddingRight="@dimen/base_dp30"
+            android:paddingBottom="@dimen/base_dp13"
+            android:src="@mipmap/base_ic_left_back"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/bt_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/base_actionbar_btn_selecter"
+            android:padding="8dp"
+            android:text="个人中心"
+            android:textColor="#231815"
+            android:textSize="@dimen/base_dp17"
+            android:visibility="gone"
+            tools:ignore="SpUsage" />
+
+        <TextView
+            android:id="@+id/tv_left_label"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/base_dp2"
+            android:layout_marginRight="@dimen/base_dp2"
+            android:layout_toStartOf="@+id/tv_center"
+            android:layout_toLeftOf="@+id/tv_center"
+            android:textSize="@dimen/base_dp15"
+            android:visibility="gone"
+            tools:ignore="SpUsage" />
+
+        <TextView
+            android:id="@+id/tv_center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="Test"
+            android:textColor="@color/black"
+            android:textSize="@dimen/base_dp18"
+            android:visibility="gone"
+            tools:ignore="SpUsage" />
+
+        <ImageView
+            android:id="@+id/iv_right"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/base_actionbar_btn_selecter"
+            android:paddingLeft="@dimen/base_dp15"
+            android:paddingTop="@dimen/base_dp5"
+            android:paddingRight="@dimen/base_dp15"
+            android:paddingBottom="@dimen/base_dp5"
+            android:src="@mipmap/base_ic_launcher"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/bt_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/base_actionbar_btn_selecter"
+            android:text="注册"
+            android:textColor="@color/base_color_333333"
+            android:textSize="@dimen/base_dp16"
+            android:visibility="gone"
+            tools:ignore="SpUsage" />
+
+        <RelativeLayout
+            android:id="@+id/search_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/base_dp60"
+            android:layout_marginLeft="@dimen/base_dp60"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/input_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/base_dp28"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/base_dp76"
+                android:layout_marginRight="@dimen/base_dp76"
+                android:background="@drawable/base_radius_none_border_black_alpha_30"
+                android:hint="鹌鹑蛋"
+                android:paddingLeft="@dimen/base_dp15"
+                android:paddingRight="@dimen/base_dp15"
+                android:singleLine="true"
+                android:textColor="@color/base_color_333333"
+                android:textSize="@dimen/base_dp14"
+                tools:ignore="SpUsage" />
+
+            <TextView
+                android:id="@+id/search_action_button"
+                android:layout_width="@dimen/base_dp50"
+                android:layout_height="@dimen/base_dp28"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="@dimen/base_dp11"
+                android:layout_marginRight="@dimen/base_dp11"
+                android:background="@drawable/base_radius_none_boder_red_20"
+                android:gravity="center"
+                android:text="搜索"
+                android:textColor="@color/white"
+                android:textSize="@dimen/base_dp14"
+                tools:ignore="SpUsage" />
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rl_actionbar" />
+
+    <View
+        android:id="@+id/shadow_view"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/rl_actionbar"
+        android:background="@color/base_color_F0F0F0"
+        android:elevation="0.5dp" />
+</RelativeLayout>

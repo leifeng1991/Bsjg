@@ -1,0 +1,90 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+static def stringValue(def value) {
+    return "\"${value}\""
+}
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        applicationId "com.scorpio.bsjg"
+        minSdk 21
+        targetSdk 31
+        versionCode 1
+        versionName "1.0.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            //设置支持的SO库架构（开发者可以根据需要，选择一个或多个平台的so）
+            abiFilters  "armeabi-v7a"
+        }
+    }
+
+    signingConfigs {
+        release {
+            keyAlias 'key0'
+            keyPassword '123456'
+            storeFile file('../doc/key.jks')
+            storePassword '123456'
+        }
+        debug {
+        }
+    }
+
+    buildTypes {
+        release {
+            debuggable true
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            // 正式版本App名称
+            resValue("string", "app_name", "千里科技")
+            buildConfigField("String", "BASE_URL", stringValue("https://test.wj23.com.cn/bs/"))
+
+        }
+
+        debug {
+            debuggable true
+            signingConfig signingConfigs.release
+            // 测试版本App名称
+            resValue("string", "app_name", "千里科技测试")
+            buildConfigField("String", "BASE_URL", stringValue("https://test.wj23.com.cn/bs/"))
+
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        dataBinding = true
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+}
+
+dependencies {
+
+    implementation project(path: ':lib_base')
+    implementation project(path: ':lib_update_app')
+    implementation 'com.github.jenly1314:zxing-lite:2.1.1'
+
+    implementation 'com.amap.api:navi-3dmap:latest.integration'
+    implementation 'com.amap.api:location:latest.integration'
+    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'com.google.android.material:material:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+
+    implementation 'com.github.getActivity:XXPermissions:13.6'
+}

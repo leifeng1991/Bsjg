@@ -1,0 +1,28 @@
+<resources>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!-- 加载弹框样式 -->
+    <style name="BaseLightDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+    </style>
+
+    <style name="BaseLightProgressDialog" parent="@style/BaseLightDialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+
+    <style name="textStyleAlertDialog1">  <!--字体一 样式-->
+        <!-- <item name="android:textSize"> 28dp</item> --> <!--设置大小-->
+        <item name="android:textStyle">bold</item>   <!--设置颜色-->
+        <item name="android:textColor">@color/base_color_333333</item>   <!--设置颜色-->
+    </style>
+
+</resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:descendantFocusability="beforeDescendants"
+        android:paddingTop="@dimen/sw_26dp"
+        android:paddingBottom="@dimen/sw_26dp">
+
+        <com.ruffian.library.widget.RTextView
+            android:id="@+id/mAddressTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/sw_6dp"
+            android:paddingBottom="@dimen/sw_6dp"
+            android:text="003工业设计城：柳州市鱼峰区职校路15号"
+            android:textColor="#ff65b651"
+            android:textSize="@dimen/sw_60sp"
+            app:background_normal="@color/white"
+            app:background_selected="#4D65B651"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

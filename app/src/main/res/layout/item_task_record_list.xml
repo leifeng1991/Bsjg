@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <com.ruffian.library.widget.RConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/sw_439dp"
+        android:layout_marginTop="@dimen/sw_43dp"
+        android:layout_marginEnd="@dimen/sw_439dp"
+        android:layout_marginBottom="@dimen/sw_17dp"
+        android:paddingStart="@dimen/sw_19dp"
+        android:paddingTop="@dimen/sw_43dp"
+        android:paddingEnd="@dimen/sw_85dp"
+        android:paddingBottom="@dimen/sw_28dp"
+        app:background_normal="#65B651"
+        app:corner_radius="@dimen/sw_12dp">
+
+        <TextView
+            android:id="@+id/mTimeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2021-5-31   10:10.35 "
+            android:textColor="#ffffffff"
+            android:textSize="@dimen/sw_50sp"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <TextView
+            android:id="@+id/mSubtotalTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="小计：¥200  "
+            android:textColor="#ffffffff"
+            android:textSize="@dimen/sw_50sp"
+            app:layout_constraintRight_toLeftOf="@+id/mDesOneTextView" />
+
+        <TextView
+            android:id="@+id/mDesOneTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/sw_53dp"
+            android:text="详情"
+            android:textColor="#ffffffff"
+            android:textSize="@dimen/sw_60sp"
+            android:visibility="gone"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+            android:id="@+id/mAddressTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sw_34dp"
+            android:text="起始项目： 工业设计城（缺卡）       ——>           终点：官塘 "
+            android:textColor="#ffffffff"
+            android:textSize="@dimen/sw_50sp"
+            app:layout_constraintTop_toBottomOf="@+id/mTimeTextView" />
+
+        <com.ruffian.library.widget.RTextView
+            android:id="@+id/mApplyTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sw_44dp"
+            android:paddingStart="@dimen/sw_30dp"
+            android:paddingTop="@dimen/sw_7dp"
+            android:paddingEnd="@dimen/sw_30dp"
+            android:paddingBottom="@dimen/sw_7dp"
+            android:text="申请补卡"
+            android:textColor="#ff65b651"
+            android:textSize="@dimen/sw_50sp"
+            android:visibility="gone"
+            app:background_normal="@color/white"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mSubtotalTextView" />
+
+        <TextView
+            android:id="@+id/mDesTwoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sw_47dp"
+            android:text="详情"
+            android:textColor="#ffffffff"
+            android:textSize="@dimen/sw_60sp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mSubtotalTextView" />
+    </com.ruffian.library.widget.RConstraintLayout>
+</layout>

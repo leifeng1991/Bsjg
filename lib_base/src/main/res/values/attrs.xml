@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- HeaderBar自定义属性 -->
+    <declare-styleable name="HeaderBar" tools:ignore="ResourceName">
+        <attr name="isShowBack" format="boolean"/>
+        <attr name="titleText" format="string"/>
+        <attr name="titleColor" format="color"/>
+        <attr name="rightText" format="string"/>
+        <attr name="rightLeftSrc" format="reference"/>
+        <attr name="rightRightSrc" format="reference"/>
+        <attr name="leftSrc" format="reference"/>
+        <attr name="leftPaddingLeft" format="dimension"/>
+    </declare-styleable>
+
+
+</resources>

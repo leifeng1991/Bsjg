@@ -1,0 +1,1359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.MapActivity">
+
+        <com.amap.api.maps.MapView
+            android:id="@+id/mMapView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/mContentTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.ruffian.library.widget.RTextView
+            android:id="@+id/mBackTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sw_82dp"
+            android:layout_marginTop="@dimen/sw_120dp"
+            android:paddingStart="@dimen/sw_60dp"
+            android:paddingTop="@dimen/sw_20dp"
+            android:paddingEnd="@dimen/sw_60dp"
+            android:paddingBottom="@dimen/sw_20dp"
+            android:text="返回"
+            android:textColor="#ff65b651"
+            android:textSize="@dimen/sw_60sp"
+            app:background_normal="#65B651"
+            app:border_color_normal="#65B651"
+            app:border_width_normal="@dimen/_sw_4dp"
+            app:corner_radius="@dimen/sw_10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:text_color_normal="@color/white" />
+
+        <com.ruffian.library.widget.RLinearLayout
+            android:layout_width="@dimen/sw_120dp"
+            android:layout_height="@dimen/sw_341dp"
+            android:layout_marginTop="@dimen/sw_264dp"
+            android:orientation="vertical"
+            app:background_normal="@color/white"
+            app:border_color_normal="#65B651"
+            app:border_width_normal="@dimen/sw_4dp"
+            app:corner_radius="@dimen/sw_8dp"
+            app:layout_constraintLeft_toLeftOf="@+id/mBackTextView"
+            app:layout_constraintTop_toBottomOf="@+id/mBackTextView">
+
+            <TextView
+                android:id="@+id/mAddTextView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="+"
+                android:textColor="#ff65b651"
+                android:textSize="@dimen/sw_60sp" />
+
+            <TextView
+                android:id="@+id/mSubTextView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="-"
+                android:textColor="#ff65b651"
+                android:textSize="@dimen/sw_60sp" />
+        </com.ruffian.library.widget.RLinearLayout>
+
+        <com.ruffian.library.widget.RTextView
+            android:id="@+id/mDriverRTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sw_120dp"
+            android:layout_marginEnd="@dimen/sw_84dp"
+            android:paddingStart="@dimen/sw_38dp"
+            android:paddingTop="@dimen/sw_20dp"
+            android:paddingEnd="@dimen/sw_38dp"
+            android:paddingBottom="@dimen/sw_20dp"
+            android:text="司机：欧阳娜娜  桂B WU888"
+            android:textColor="#ff65b651"
+            android:textSize="@dimen/sw_60sp"
+            app:background_normal="@color/white"
+            app:border_color_normal="#65B651"
+            app:border_width_normal="@dimen/sw_4dp"
+            app:corner_radius="@dimen/sw_10dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/sw_84dp"
+            android:orientation="vertical"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mDriverRTextView">
+
+            <com.ruffian.library.widget.RTextView
+                android:id="@+id/mCloseTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/sw_60dp"
+                android:gravity="center"
+                android:minWidth="@dimen/sw_300dp"
+                android:minHeight="@dimen/sw_116dp"
+                android:text="关闭"
+                android:textSize="@dimen/sw_50sp"
+                app:background_normal="@color/white"
+                app:border_color_normal="#65B651"
+                app:border_width_normal="@dimen/sw_4dp"
+                app:corner_radius="@dimen/sw_10dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:text_color_normal="#65B651" />
+
+            <com.ruffian.library.widget.RLinearLayout
+                android:id="@+id/mRightCarLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/sw_40dp"
+                android:gravity="center"
+                android:minWidth="@dimen/sw_300dp"
+                android:minHeight="@dimen/sw_116dp"
+                android:orientation="horizontal"
+                app:background_normal="@color/white"
+                app:background_selected="#65B651"
+                app:border_color_normal="#65B651"
+                app:border_width_normal="@dimen/sw_4dp"
+                app:corner_radius="@dimen/sw_10dp">
+
+                <com.ruffian.library.widget.RTextView
+                    android:id="@+id/mRightCarNameTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="车辆"
+                    android:textColor="#ff65b651"
+                    android:textSize="@dimen/sw_40sp"
+                    app:text_color_normal="#ff65b651"
+                    app:text_color_selected="@color/white" />
+
+                <com.ruffian.library.widget.RView
+                    android:id="@+id/mRightCarLineView"
+                    android:layout_width="@dimen/sw_1dp"
+                    android:layout_height="@dimen/sw_44dp"
+                    android:layout_marginStart="@dimen/sw_36dp"
+                    android:layout_marginEnd="@dimen/sw_36dp"
+                    android:background="#65B651"
+                    app:background_normal="#ff65b651"
+                    app:background_selected="@color/white" />
+
+                <com.ruffian.library.widget.RTextView
+                    android:id="@+id/mRightCarTipTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="最大\n显示"
+                    android:textColor="#ff65b651"
+                    android:textSize="@dimen/sw_24sp"
+                    app:text_color_normal="#ff65b651"
+                    app:text_color_selected="@color/white" />
+            </com.ruffian.library.widget.RLinearLayout>
+
+            <com.ruffian.library.widget.RLinearLayout
+                android:id="@+id/mRightStartLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/sw_40dp"
+                android:gravity="center"
+                android:minWidth="@dimen/sw_300dp"
+                android:minHeight="@dimen/sw_116dp"
+                android:orientation="horizontal"
+                app:background_normal="@color/white"
+                app:background_selected="#65B651"
+                app:border_color_normal="#65B651"
+                app:border_width_normal="@dimen/sw_4dp"
+                app:corner_radius="@dimen/sw_10dp">
+
+                <com.ruffian.library.widget.RTextView
+                    android:id="@+id/mRightStartNameTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="起点"
+                    android:textColor="#ff65b651"
+                    android:textSize="@dimen/sw_40sp"
+                    app:text_color_normal="#ff65b651"
+                    app:text_color_selected="@color/white" />
+
+                <com.ruffian.library.widget.RView
+                    android:id="@+id/mRightStartLineView"
+                    android:layout_width="@dimen/sw_1dp"
+                    android:layout_height="@dimen/sw_44dp"
+                    android:layout_marginStart="@dimen/sw_36dp"
+                    android:layout_marginEnd="@dimen/sw_36dp"
+                    android:background="#65B651"
+                    app:text_color_normal="#ff65b651"
+                    app:text_color_selected="@color/white" />
+
+                <com.ruffian.library.widget.RTextView
+                    android:id="@+id/mRightStartTipTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="最大\n显示"
+                    android:textColor="#ff65b651"
+                    android:textSize="@dimen/sw_24sp"
+                    app:text_color_normal="#ff65b651"
+                    app:text_color_selected="@color/white" />
+            </com.ruffian.library.widget.RLinearLayout>
+
+            <com.ruffian.library.widget.RLinearLayout
+                android:id="@+id/mRightEndLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/sw_40dp"
+                android:gravity="center"
+                android:minWidth="@dimen/sw_300dp"
+                android:minHeight="@dimen/sw_114dp"
+                android:orientation="horizontal"
+                app:background_normal="@color/white"
+                app:background_selected="#65B651"
+                app:border_color_normal="#65B651"
+                app:border_width_normal="@dimen/sw_4dp"
+                app:corner_radius="@dimen/sw_10dp">
+
+                <com.ruffian.library.widget.RTextView
+                    android:id="@+id/mRightEndNameTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="终点"
+                    android:textColor="#ff65b651"
+                    android:textSize="@dimen/sw_40sp"
+                    app:text_color_normal="#ff65b651"
+                    app:text_color_selected="@color/white" />
+
+                <com.ruffian.library.widget.RView
+                    android:id="@+id/mRightEndLineView"
+                    android:layout_width="@dimen/sw_1dp"
+                    android:layout_height="@dimen/sw_44dp"
+                    android:layout_marginStart="@dimen/sw_36dp"
+                    android:layout_marginEnd="@dimen/sw_36dp"
+                    android:background="#65B651"
+                    app:text_color_normal="#ff65b651"
+                    app:text_color_selected="@color/white" />
+
+                <com.ruffian.library.widget.RTextView
+                    android:id="@+id/mRightEndTipTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="最大\n显示"
+                    android:textColor="#ff65b651"
+                    android:textSize="@dimen/sw_24sp"
+                    app:text_color_normal="#ff65b651"
+                    app:text_color_selected="@color/white" />
+            </com.ruffian.library.widget.RLinearLayout>
+
+            <com.ruffian.library.widget.RLinearLayout
+                android:id="@+id/mRightAllLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/sw_40dp"
+                android:gravity="center"
+                android:minWidth="@dimen/sw_300dp"
+                android:minHeight="@dimen/sw_114dp"
+                android:orientation="horizontal"
+                app:background_normal="@color/white"
+                app:background_selected="#65B651"
+                app:border_color_normal="#65B651"
+                app:border_width_normal="@dimen/sw_4dp"
+                app:corner_radius="@dimen/sw_10dp">
+
+                <com.ruffian.library.widget.RTextView
+                    android:id="@+id/mRightAllNameTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="全部"
+                    android:textColor="#ff65b651"
+                    android:textSize="@dimen/sw_40sp"
+                    app:text_color_normal="#ff65b651"
+                    app:text_color_selected="@color/white" />
+
+                <com.ruffian.library.widget.RView
+                    android:id="@+id/mRightAllLineView"
+                    android:layout_width="@dimen/sw_1dp"
+                    android:layout_height="@dimen/sw_44dp"
+                    android:layout_marginStart="@dimen/sw_36dp"
+                    android:layout_marginEnd="@dimen/sw_36dp"
+                    android:background="#65B651"
+                    app:text_color_normal="#ff65b651"
+                    app:text_color_selected="@color/white" />
+
+                <com.ruffian.library.widget.RTextView
+                    android:id="@+id/mRightAllTipTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="最大\n显示"
+                    android:textColor="#ff65b651"
+                    android:textSize="@dimen/sw_24sp"
+                    app:text_color_normal="#ff65b651"
+                    app:text_color_selected="@color/white" />
+            </com.ruffian.library.widget.RLinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/mTaskLayout"
+            android:layout_width="@dimen/sw_2360dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.ruffian.library.widget.RLinearLayout
+                android:id="@+id/mLastTaskContentLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/sw_100dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/sw_112dp"
+                android:paddingTop="@dimen/sw_42dp"
+                android:paddingEnd="@dimen/sw_44dp"
+                android:paddingBottom="@dimen/sw_42dp"
+                android:visibility="gone"
+                app:background_normal="#FB8739"
+                app:corner_radius="@dimen/sw_16dp">
+
+                <TextView
+                    android:id="@+id/mLastTaskContentTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="辛苦了！你已完成：工业设计城 至  磨太路东段  运输任务     请选择后续工作"
+                    android:textColor="#fff9f9f9"
+                    android:textSize="@dimen/sw_60sp" />
+            </com.ruffian.library.widget.RLinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.ruffian.library.widget.RLinearLayout
+                    android:id="@+id/mContinueLastTaskLayout"
+                    android:layout_width="@dimen/sw_680dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/sw_100dp"
+                    android:paddingBottom="@dimen/sw_42dp"
+                    android:visibility="gone"
+                    app:background_normal="#65B651"
+                    app:corner_radius="@dimen/sw_16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="继续上次任务"
+                        android:textColor="#ffffffff"
+                        android:textSize="@dimen/sw_80sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/sw_2dp"
+                        android:layout_marginTop="@dimen/sw_44dp"
+                        android:background="@color/white" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/sw_30dp"
+                        android:gravity="center"
+                        android:text="点击后，按上次任务的起止点和终点开始运输"
+                        android:textColor="#ffffffff"
+                        android:textSize="@dimen/sw_30sp" />
+                </com.ruffian.library.widget.RLinearLayout>
+
+                <Space
+                    android:layout_width="@dimen/base_dp0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <com.ruffian.library.widget.RLinearLayout
+                    android:id="@+id/mNewTaskLayout"
+                    android:layout_width="@dimen/sw_680dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/sw_100dp"
+                    android:paddingBottom="@dimen/sw_42dp"
+                    app:background_normal="#65B651"
+                    app:corner_radius="@dimen/sw_16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="新建任务"
+                        android:textColor="#ffffffff"
+                        android:textSize="@dimen/sw_80sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/sw_2dp"
+                        android:layout_marginTop="@dimen/sw_44dp"
+                        android:background="@color/white" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/sw_30dp"
+                        android:gravity="center"
+                        android:text="点击后，新建起始点和终点的运输任务"
+                        android:textColor="#ffffffff"
+                        android:textSize="@dimen/sw_30sp" />
+                </com.ruffian.library.widget.RLinearLayout>
+
+                <Space
+                    android:layout_width="@dimen/base_dp0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <com.ruffian.library.widget.RLinearLayout
+                    android:id="@+id/mCheckTaskLayout"
+                    android:layout_width="@dimen/sw_680dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/sw_100dp"
+                    android:paddingBottom="@dimen/sw_42dp"
+                    android:visibility="gone"
+                    app:background_normal="#65B651"
+                    app:corner_radius="@dimen/sw_16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="查看任务记录"
+                        android:textColor="#ffffffff"
+                        android:textSize="@dimen/sw_80sp" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/sw_2dp"
+                        android:layout_marginTop="@dimen/sw_44dp"
+                        android:background="@color/white" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/sw_30dp"
+                        android:gravity="center"
+                        android:text="查看此前的任务记录"
+                        android:textColor="#ffffffff"
+                        android:textSize="@dimen/sw_30sp" />
+                </com.ruffian.library.widget.RLinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mFirstLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mBackTextView">
+
+            <LinearLayout
+                android:id="@+id/mCenterLayout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/sw_20dp"
+                android:layout_marginBottom="@dimen/sw_20dp"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@+id/mBottomLayout"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.ruffian.library.widget.RLinearLayout
+                    android:id="@+id/mLeftCenterLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/sw_110dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/sw_40dp"
+                    app:background_normal="@color/white"
+                    app:corner_radius="@dimen/sw_10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/sw_100dp"
+                        android:layout_marginEnd="@dimen/sw_100dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="起始地点设置"
+                            android:textColor="#ff65b651"
+                            android:textSize="@dimen/sw_60sp" />
+
+                        <com.ruffian.library.widget.REditText
+                            android:id="@+id/mInputStartKeywordEditText"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/sw_20dp"
+                            android:layout_marginEnd="@dimen/sw_20dp"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:gravity="center"
+                            android:hint="请输入搜索的地址"
+                            android:imeOptions="actionSearch"
+                            android:paddingStart="@dimen/sw_20dp"
+                            android:paddingTop="@dimen/sw_10dp"
+                            android:paddingEnd="@dimen/sw_20dp"
+                            android:paddingBottom="@dimen/sw_10dp"
+                            android:singleLine="true"
+                            android:textColorHint="#65B651"
+                            android:textSize="@dimen/sw_60sp"
+                            app:background_normal="#D0E9CA"
+                            app:text_color_normal="#65B651" />
+
+                        <com.ruffian.library.widget.RTextView
+                            android:id="@+id/mLeftCompleteChoiceRTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="@dimen/sw_48dp"
+                            android:paddingTop="@dimen/sw_10dp"
+                            android:paddingEnd="@dimen/sw_48dp"
+                            android:paddingBottom="@dimen/sw_10dp"
+                            android:text="完成选择"
+                            android:textColor="#ffffffff"
+                            android:textSize="@dimen/sw_60sp"
+                            app:background_normal="#65B651"
+                            app:corner_radius="@dimen/sw_10dp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/sw_2dp"
+                        android:layout_marginTop="@dimen/sw_36dp"
+                        android:background="#979797" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/mLeftRecyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="@dimen/sw_100dp"
+                        android:layout_marginTop="@dimen/sw_54dp"
+                        android:layout_marginEnd="@dimen/sw_100dp"
+                        android:layout_weight="1" />
+                </com.ruffian.library.widget.RLinearLayout>
+
+                <Space
+                    android:layout_width="@dimen/base_dp0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <com.ruffian.library.widget.RLinearLayout
+                    android:id="@+id/mRightCenterLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/sw_120dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/sw_40dp"
+                    app:background_normal="@color/white"
+                    app:corner_radius="@dimen/sw_10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/sw_100dp"
+                        android:layout_marginEnd="@dimen/sw_100dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="终点设置"
+                            android:textColor="#ff65b651"
+                            android:textSize="@dimen/sw_60sp" />
+
+                        <com.ruffian.library.widget.REditText
+                            android:id="@+id/mInputEndKeywordEditText"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/sw_20dp"
+                            android:layout_marginEnd="@dimen/sw_20dp"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:gravity="center"
+                            android:hint="请输入搜索的地址"
+                            android:imeOptions="actionSearch"
+                            android:paddingStart="@dimen/sw_20dp"
+                            android:paddingTop="@dimen/sw_10dp"
+                            android:paddingEnd="@dimen/sw_20dp"
+                            android:paddingBottom="@dimen/sw_10dp"
+                            android:singleLine="true"
+                            android:textColorHint="#65B651"
+                            android:textSize="@dimen/sw_60sp"
+                            app:background_normal="#D0E9CA"
+                            app:text_color_normal="#65B651" />
+
+                        <com.ruffian.library.widget.RTextView
+                            android:id="@+id/mRightCompleteChoiceRTextView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="@dimen/sw_48dp"
+                            android:paddingTop="@dimen/sw_10dp"
+                            android:paddingEnd="@dimen/sw_48dp"
+                            android:paddingBottom="@dimen/sw_10dp"
+                            android:text="完成选择"
+                            android:textColor="#ffffffff"
+                            android:textSize="@dimen/sw_60sp"
+                            app:background_normal="#65B651"
+                            app:corner_radius="@dimen/sw_10dp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/sw_2dp"
+                        android:layout_marginTop="@dimen/sw_36dp"
+                        android:background="#979797" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/mRightRecyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="@dimen/sw_100dp"
+                        android:layout_marginTop="@dimen/sw_54dp"
+                        android:layout_marginEnd="@dimen/sw_100dp"
+                        android:layout_weight="1" />
+                </com.ruffian.library.widget.RLinearLayout>
+            </LinearLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/mBuLuOrderLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/sw_30dp"
+                app:layout_constraintBottom_toTopOf="@+id/mBottomLayout"
+                app:layout_constraintRight_toRightOf="parent">
+
+                <com.ruffian.library.widget.RTextView
+                    android:id="@+id/mAdditionalRecordingRTextView"
+                    android:layout_width="@dimen/sw_777dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/sw_110dp"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/sw_34dp"
+                    android:paddingBottom="@dimen/sw_22dp"
+                    android:text="补录工单"
+                    android:textColor="#ffffffff"
+                    android:textSize="@dimen/sw_60sp"
+                    app:background_normal="#92D0FC"
+                    app:corner_radius_top_left="@dimen/sw_58dp"
+                    app:corner_radius_top_right="@dimen/sw_58dp"
+                    app:layout_constraintBottom_toTopOf="@+id/mDaKaLayout"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+                <com.ruffian.library.widget.RLinearLayout
+                    android:id="@+id/mDaKaLayout"
+                    android:layout_width="@dimen/sw_777dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/sw_110dp"
+                    android:orientation="horizontal"
+                    app:background_normal="#65B651"
+                    app:corner_radius_bottom_left="@dimen/sw_58dp"
+                    app:corner_radius_bottom_right="@dimen/sw_58dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:paddingTop="@dimen/sw_84dp"
+                        android:paddingBottom="@dimen/sw_84dp"
+                        android:text="打卡情况"
+                        android:textColor="#fff6fff4"
+                        android:textSize="@dimen/sw_60sp" />
+
+                    <View
+                        android:layout_width="@dimen/sw_4dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="@dimen/sw_80dp"
+                        android:layout_marginBottom="@dimen/sw_80dp"
+                        android:background="@color/white" />
+
+                    <TextView
+                        android:id="@+id/mLackCardTimesTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:paddingTop="@dimen/sw_84dp"
+                        android:paddingBottom="@dimen/sw_84dp"
+                        android:text="缺卡 1 次"
+                        android:textColor="#fff6fff4"
+                        android:textSize="@dimen/sw_60sp" />
+
+                </com.ruffian.library.widget.RLinearLayout>
+
+                <com.ruffian.library.widget.RTextView
+                    android:id="@+id/mNumRedTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_marginEnd="@dimen/sw_76dp"
+                    android:gravity="center"
+                    android:minWidth="@dimen/sw_100dp"
+                    android:text="1"
+                    android:textColor="#ffffffff"
+                    android:textSize="@dimen/sw_60sp"
+                    app:background_normal="#F11111"
+                    app:corner_radius="@dimen/sw_200dp"
+                    app:layout_constraintBottom_toTopOf="@+id/mDaKaLayout"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mAdditionalRecordingRTextView" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.ruffian.library.widget.RLinearLayout
+                android:id="@+id/mBottomLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sw_110dp"
+                android:layout_marginEnd="@dimen/sw_110dp"
+                android:layout_marginBottom="@dimen/sw_69dp"
+                android:gravity="center_vertical"
+                android:minHeight="@dimen/sw_330dp"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/sw_120dp"
+                android:paddingEnd="@dimen/sw_120dp"
+                app:background_normal="@color/white"
+                app:corner_radius="@dimen/sw_16dp"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                    android:id="@+id/mStarPointTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="起始项目：  未设置起始点"
+                    android:textColor="#ff65b651"
+                    android:textSize="@dimen/sw_60sp" />
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.ruffian.library.widget.RTextView
+                        android:id="@+id/mLeftTopTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="@dimen/sw_48dp"
+                        android:paddingTop="@dimen/sw_10dp"
+                        android:paddingEnd="@dimen/sw_48dp"
+                        android:paddingBottom="@dimen/sw_10dp"
+                        android:text="更改位置"
+                        android:textColor="#ffffffff"
+                        android:textSize="@dimen/sw_60sp"
+                        app:background_normal="#65B651"
+                        app:corner_radius="@dimen/sw_10dp" />
+
+                    <com.ruffian.library.widget.RTextView
+                        android:id="@+id/mLeftBottomTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/sw_40dp"
+                        android:paddingStart="@dimen/sw_48dp"
+                        android:paddingTop="@dimen/sw_10dp"
+                        android:paddingEnd="@dimen/sw_48dp"
+                        android:paddingBottom="@dimen/sw_10dp"
+                        android:text="开始导航"
+                        android:textColor="#ffffffff"
+                        android:textSize="@dimen/sw_60sp"
+                        android:visibility="gone"
+                        app:background_normal="#65B651"
+                        app:corner_radius="@dimen/sw_10dp" />
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/sw_80dp"
+                    android:layout_marginEnd="@dimen/sw_40dp"
+                    android:text="——>"
+                    android:textColor="#ff65b651"
+                    android:textSize="@dimen/sw_60sp" />
+
+                <TextView
+                    android:id="@+id/mEndPointTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="起始项目：  未设置起始点"
+                    android:textColor="#ff65b651"
+                    android:textSize="@dimen/sw_60sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.ruffian.library.widget.RTextView
+                        android:id="@+id/mRightTopTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="@dimen/sw_48dp"
+                        android:paddingTop="@dimen/sw_10dp"
+                        android:paddingEnd="@dimen/sw_48dp"
+                        android:paddingBottom="@dimen/sw_10dp"
+                        android:text="更改位置"
+                        android:textColor="#ffffffff"
+                        android:textSize="@dimen/sw_60sp"
+                        app:background_normal="#65B651"
+                        app:corner_radius="@dimen/sw_10dp" />
+
+                    <com.ruffian.library.widget.RTextView
+                        android:id="@+id/mRightBottomTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/sw_40dp"
+                        android:paddingStart="@dimen/sw_48dp"
+                        android:paddingTop="@dimen/sw_10dp"
+                        android:paddingEnd="@dimen/sw_48dp"
+                        android:paddingBottom="@dimen/sw_10dp"
+                        android:text="开始导航"
+                        android:textColor="#ffffffff"
+                        android:textSize="@dimen/sw_60sp"
+                        android:visibility="gone"
+                        app:background_normal="#65B651"
+                        app:corner_radius="@dimen/sw_10dp" />
+                </LinearLayout>
+            </com.ruffian.library.widget.RLinearLayout>
+
+            <com.ruffian.library.widget.RTextView
+                android:id="@+id/mStartClockInRTextView"
+                android:layout_width="@dimen/sw_300dp"
+                android:layout_height="@dimen/sw_300dp"
+                android:layout_marginStart="@dimen/sw_200dp"
+                android:layout_marginBottom="@dimen/sw_352dp"
+                android:gravity="center"
+                android:text="打卡"
+                android:textColor="#ffffffff"
+                android:textSize="@dimen/sw_60sp"
+                app:background_normal="#B4B4B4"
+                app:corner_radius="@dimen/sw_300dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent" />
+
+            <com.ruffian.library.widget.RTextView
+                android:id="@+id/mEndClockInRTextView"
+                android:layout_width="@dimen/sw_300dp"
+                android:layout_height="@dimen/sw_300dp"
+                android:layout_marginStart="@dimen/sw_400dp"
+                android:layout_marginBottom="@dimen/sw_352dp"
+                android:gravity="center"
+                android:text="打卡"
+                android:textColor="#ffffffff"
+                android:textSize="@dimen/sw_60sp"
+                app:background_normal="#B4B4B4"
+                app:corner_radius="@dimen/sw_300dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <com.ruffian.library.widget.RLinearLayout
+                android:id="@+id/mClickSettingStartLayout"
+                android:layout_width="@dimen/sw_660dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/sw_60dp"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/sw_60dp"
+                android:paddingBottom="@dimen/sw_40dp"
+                app:background_normal="#65B651"
+                app:corner_radius="@dimen/sw_16dp"
+                app:layout_constraintBottom_toTopOf="@+id/mBottomLayout"
+                app:layout_constraintLeft_toRightOf="@+id/mStartClockInRTextView"
+                app:layout_constraintRight_toLeftOf="@+id/mEndClockInRTextView">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="请设置运输起始点"
+                    android:textColor="#ffffffff"
+                    android:textSize="@dimen/sw_60sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/sw_2dp"
+                    android:layout_marginTop="@dimen/sw_44dp"
+                    android:background="@color/white" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/sw_30dp"
+                    android:gravity="center"
+                    android:text="点击设置"
+                    android:textColor="#ffffffff"
+                    android:textSize="@dimen/sw_50sp" />
+            </com.ruffian.library.widget.RLinearLayout>
+
+            <com.ruffian.library.widget.RLinearLayout
+                android:id="@+id/mClickSettingEndLayout"
+                android:layout_width="@dimen/sw_660dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/sw_60dp"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/sw_60dp"
+                android:paddingBottom="@dimen/sw_40dp"
+                android:visibility="gone"
+                app:background_normal="#65B651"
+                app:corner_radius="@dimen/sw_16dp"
+                app:layout_constraintBottom_toTopOf="@+id/mBottomLayout"
+                app:layout_constraintLeft_toRightOf="@+id/mEndClockInRTextView"
+                app:layout_constraintRight_toRightOf="@+id/mBottomLayout">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="请设置运输起始点"
+                    android:textColor="#ffffffff"
+                    android:textSize="@dimen/sw_60sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/sw_2dp"
+                    android:layout_marginTop="@dimen/sw_44dp"
+                    android:background="@color/white" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/sw_30dp"
+                    android:gravity="center"
+                    android:text="点击设置"
+                    android:textColor="#ffffffff"
+                    android:textSize="@dimen/sw_50sp" />
+            </com.ruffian.library.widget.RLinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mSecondLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/sw_410dp"
+                android:layout_marginTop="@dimen/sw_401dp"
+                android:layout_marginEnd="@dimen/sw_410dp"
+                android:background="@color/white"
+                android:clickable="true"
+                android:focusable="true"
+                android:paddingBottom="@dimen/sw_116dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/mBuLuTitleTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#65B651"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/sw_34dp"
+                    android:paddingBottom="@dimen/sw_36dp"
+                    android:text="补录工单"
+                    android:textColor="#ffffffff"
+                    android:textSize="@dimen/sw_80sp"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/mBuLuStartTitleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/sw_142dp"
+                    android:layout_marginTop="@dimen/sw_136dp"
+                    android:text="起始项目：   "
+                    android:textColor="#ff65b651"
+                    android:textSize="@dimen/sw_60sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/mBuLuStartTextView"
+                    app:layout_constraintTop_toBottomOf="@+id/mBuLuTitleTextView" />
+
+                <com.ruffian.library.widget.RTextView
+                    android:id="@+id/mBuLuStartTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/sw_50dp"
+                    android:layout_marginEnd="@dimen/sw_20dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:gravity="center"
+                    android:hint="请输入搜索的地址"
+                    android:paddingStart="@dimen/sw_20dp"
+                    android:paddingTop="@dimen/sw_10dp"
+                    android:paddingEnd="@dimen/sw_20dp"
+                    android:paddingBottom="@dimen/sw_10dp"
+                    android:singleLine="true"
+                    android:textColorHint="#65B651"
+                    android:textSize="@dimen/sw_60sp"
+                    app:background_normal="#D0E9CA"
+                    app:layout_constraintBottom_toBottomOf="@+id/mBuLuStartTitleTextView"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintLeft_toRightOf="@+id/mBuLuStartTitleTextView"
+                    app:layout_constraintRight_toLeftOf="@+id/mBuLuEndTitleTextView"
+                    app:layout_constraintTop_toTopOf="@+id/mBuLuStartTitleTextView"
+                    app:text_color_normal="#65B651" />
+
+                <TextView
+                    android:id="@+id/mBuLuEndTitleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/sw_108dp"
+                    android:text="终点：   "
+                    android:textColor="#ff65b651"
+                    android:textSize="@dimen/sw_60sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/mBuLuStartTextView"
+                    app:layout_constraintLeft_toRightOf="@+id/mBuLuStartTextView"
+                    app:layout_constraintRight_toLeftOf="@+id/mBuLuEndTextView"
+                    app:layout_constraintTop_toTopOf="@+id/mBuLuStartTextView" />
+
+                <com.ruffian.library.widget.RTextView
+                    android:id="@+id/mBuLuEndTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/sw_50dp"
+                    android:layout_marginEnd="@dimen/sw_100dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:gravity="center"
+                    android:hint="请输入终点"
+                    android:paddingStart="@dimen/sw_20dp"
+                    android:paddingTop="@dimen/sw_10dp"
+                    android:paddingEnd="@dimen/sw_20dp"
+                    android:paddingBottom="@dimen/sw_10dp"
+                    android:singleLine="true"
+                    android:textColorHint="#65B651"
+                    android:textSize="@dimen/sw_60sp"
+                    app:background_normal="#D0E9CA"
+                    app:layout_constraintBottom_toBottomOf="@+id/mBuLuStartTitleTextView"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintLeft_toRightOf="@+id/mBuLuEndTitleTextView"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/mBuLuStartTitleTextView"
+                    app:text_color_normal="#65B651" />
+
+
+                <TextView
+                    android:id="@+id/mBuLuTransportTimesTitleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/sw_142dp"
+                    android:layout_marginTop="@dimen/sw_64dp"
+                    android:text="运输车次：   "
+                    android:textColor="#ff65b651"
+                    android:textSize="@dimen/sw_60sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/mBuLuTransportTimesTextView"
+                    app:layout_constraintTop_toBottomOf="@+id/mBuLuStartTitleTextView" />
+
+                <com.ruffian.library.widget.REditText
+                    android:id="@+id/mBuLuTransportTimesTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/sw_50dp"
+                    android:layout_marginEnd="@dimen/sw_20dp"
+                    android:background="@null"
+                    android:gravity="center"
+                    android:hint="请输入车次"
+                    android:inputType="number"
+                    android:paddingStart="@dimen/sw_20dp"
+                    android:paddingTop="@dimen/sw_10dp"
+                    android:paddingEnd="@dimen/sw_20dp"
+                    android:paddingBottom="@dimen/sw_10dp"
+                    android:singleLine="true"
+                    android:textColorHint="#65B651"
+                    android:textSize="@dimen/sw_60sp"
+                    app:background_normal="#D0E9CA"
+                    app:layout_constraintBottom_toBottomOf="@+id/mBuLuTransportTimesTitleTextView"
+                    app:layout_constraintHorizontal_weight="468"
+                    app:layout_constraintLeft_toRightOf="@+id/mBuLuTransportTimesTitleTextView"
+                    app:layout_constraintRight_toLeftOf="@+id/mBuLuEndTitleTextView"
+                    app:layout_constraintTop_toTopOf="@+id/mBuLuTransportTimesTitleTextView"
+                    app:text_color_normal="#65B651" />
+
+                <TextView
+                    android:id="@+id/mBuLuTransportTimeTitleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/sw_142dp"
+                    android:text="运输时间：   "
+                    android:textColor="#ff65b651"
+                    android:textSize="@dimen/sw_60sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/mBuLuTransportTimesTextView"
+                    app:layout_constraintLeft_toRightOf="@+id/mBuLuTransportTimesTextView"
+                    app:layout_constraintRight_toLeftOf="@+id/mBuLuSelectDayTextView"
+                    app:layout_constraintTop_toTopOf="@+id/mBuLuTransportTimesTextView" />
+
+                <com.ruffian.library.widget.RTextView
+                    android:id="@+id/mBuLuSelectDayTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:gravity="center"
+                    android:hint="请选择年月日"
+                    android:inputType="number"
+                    android:paddingTop="@dimen/sw_10dp"
+                    android:paddingBottom="@dimen/sw_10dp"
+                    android:singleLine="true"
+                    android:textColorHint="#65B651"
+                    android:textSize="@dimen/sw_60sp"
+                    app:background_normal="#D0E9CA"
+                    app:layout_constraintBottom_toBottomOf="@+id/mBuLuTransportTimeTitleTextView"
+                    app:layout_constraintHorizontal_weight="468"
+                    app:layout_constraintLeft_toRightOf="@+id/mBuLuTransportTimeTitleTextView"
+                    app:layout_constraintRight_toLeftOf="@+id/mBuLuSelectTimeTextView"
+                    app:layout_constraintTop_toTopOf="@+id/mBuLuTransportTimeTitleTextView"
+                    app:layout_constraintVertical_bias="1.0"
+                    app:text_color_normal="#65B651" />
+
+                <com.ruffian.library.widget.RTextView
+                    android:id="@+id/mBuLuSelectTimeTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/sw_50dp"
+                    android:layout_marginEnd="@dimen/sw_100dp"
+                    android:background="@null"
+                    android:gravity="center"
+                    android:hint="请选择时间"
+                    android:inputType="number"
+                    android:paddingTop="@dimen/sw_10dp"
+                    android:paddingBottom="@dimen/sw_10dp"
+                    android:singleLine="true"
+                    android:textColorHint="#65B651"
+                    android:textSize="@dimen/sw_60sp"
+                    app:background_normal="#D0E9CA"
+                    app:layout_constraintBottom_toBottomOf="@+id/mBuLuSelectDayTextView"
+                    app:layout_constraintHorizontal_weight="323"
+                    app:layout_constraintLeft_toRightOf="@+id/mBuLuSelectDayTextView"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/mBuLuSelectDayTextView"
+                    app:text_color_normal="#65B651" />
+
+                <TextView
+                    android:id="@+id/mBuLuTipTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/sw_42dp"
+                    android:layout_marginEnd="@dimen/sw_100dp"
+                    android:text="如果补录多次运输，无需精确至小时  "
+                    android:textColor="#ff65b651"
+                    android:textSize="@dimen/sw_50sp"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mBuLuSelectTimeTextView" />
+
+                <com.ruffian.library.widget.RTextView
+                    android:id="@+id/mSubmitTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/sw_254dp"
+                    android:gravity="center"
+                    android:paddingStart="@dimen/sw_370dp"
+                    android:paddingTop="@dimen/sw_26dp"
+                    android:paddingEnd="@dimen/sw_370dp"
+                    android:paddingBottom="@dimen/sw_32dp"
+                    android:text="提交审核"
+                    android:textColor="#ffffffff"
+                    android:textSize="@dimen/sw_80sp"
+                    app:background_normal="#65B651"
+                    app:corner_radius="@dimen/sw_20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mBuLuTipTextView" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:id="@+id/mBuLuCenterLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.ruffian.library.widget.RLinearLayout
+                    android:id="@+id/mBuLuRightCenterLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="@dimen/sw_200dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/sw_160dp"
+                    android:paddingBottom="@dimen/sw_160dp"
+                    android:visibility="gone"
+                    app:background_normal="@color/white"
+                    app:corner_radius="@dimen/sw_10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/sw_100dp"
+                        android:layout_marginEnd="@dimen/sw_100dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="终点设置"
+                            android:textColor="#ff65b651"
+                            android:textSize="@dimen/sw_60sp" />
+
+                        <com.ruffian.library.widget.REditText
+                            android:id="@+id/mBuLuInputEndKeywordEditText"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/sw_20dp"
+                            android:layout_marginEnd="@dimen/sw_20dp"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:gravity="center"
+                            android:hint="请输入搜索的地址"
+                            android:imeOptions="actionSearch"
+                            android:paddingStart="@dimen/sw_20dp"
+                            android:paddingTop="@dimen/sw_10dp"
+                            android:paddingEnd="@dimen/sw_20dp"
+                            android:paddingBottom="@dimen/sw_10dp"
+                            android:singleLine="true"
+                            android:textColorHint="#65B651"
+                            android:textSize="@dimen/sw_60sp"
+                            app:background_normal="#D0E9CA"
+                            app:text_color_normal="#65B651" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/sw_2dp"
+                        android:layout_marginTop="@dimen/sw_36dp"
+                        android:background="#979797" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/mBuLuRightRecyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="@dimen/sw_100dp"
+                        android:layout_marginTop="@dimen/sw_54dp"
+                        android:layout_marginEnd="@dimen/sw_100dp"
+                        android:layout_weight="1" />
+                </com.ruffian.library.widget.RLinearLayout>
+
+
+                <Space
+                    android:layout_width="@dimen/base_dp0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <com.ruffian.library.widget.RLinearLayout
+                    android:id="@+id/mBuLuLeftCenterLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/sw_200dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingTop="@dimen/sw_160dp"
+                    android:paddingBottom="@dimen/sw_160dp"
+                    android:visibility="gone"
+                    app:background_normal="@color/white"
+                    app:corner_radius="@dimen/sw_10dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/sw_100dp"
+                        android:layout_marginEnd="@dimen/sw_100dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="起始地点设置"
+                            android:textColor="#ff65b651"
+                            android:textSize="@dimen/sw_60sp" />
+
+                        <com.ruffian.library.widget.REditText
+                            android:id="@+id/mBuLuInputStartKeywordEditText"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/sw_20dp"
+                            android:layout_marginEnd="@dimen/sw_20dp"
+                            android:layout_weight="1"
+                            android:background="@null"
+                            android:gravity="center"
+                            android:hint="请输入搜索的地址"
+                            android:imeOptions="actionSearch"
+                            android:paddingStart="@dimen/sw_20dp"
+                            android:paddingTop="@dimen/sw_10dp"
+                            android:paddingEnd="@dimen/sw_20dp"
+                            android:paddingBottom="@dimen/sw_10dp"
+                            android:singleLine="true"
+                            android:textColorHint="#65B651"
+                            android:textSize="@dimen/sw_60sp"
+                            app:background_normal="#D0E9CA"
+                            app:text_color_normal="#65B651" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/sw_2dp"
+                        android:layout_marginTop="@dimen/sw_36dp"
+                        android:background="#979797" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/mBuLuLeftRecyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_marginStart="@dimen/sw_100dp"
+                        android:layout_marginTop="@dimen/sw_54dp"
+                        android:layout_marginEnd="@dimen/sw_100dp"
+                        android:layout_weight="1" />
+                </com.ruffian.library.widget.RLinearLayout>
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

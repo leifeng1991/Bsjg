@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:gravity="center"
+        tools:context=".ui.RegisterActivity">
+
+        <ImageView
+            android:id="@+id/mAppLogoImageView"
+            android:layout_width="@dimen/sw_162dp"
+            android:layout_height="@dimen/sw_162dp"
+            android:layout_marginLeft="@dimen/sw_128dp"
+            android:layout_marginTop="@dimen/sw_110dp"
+            android:src="@mipmap/icon_logo"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/mCompanyNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sw_130dp"
+            android:text="柳州市炳圣建筑工程有限责任公司"
+            android:textColor="#333333"
+            android:textSize="@dimen/sw_90sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/mAppLogoImageView"
+            app:layout_constraintLeft_toRightOf="@+id/mAppLogoImageView"
+            app:layout_constraintTop_toTopOf="@+id/mAppLogoImageView" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/content_layout"
+            android:layout_width="@dimen/sw_1300dp"
+            android:layout_height="@dimen/sw_920dp"
+            app:cardBackgroundColor="@color/colorAccent"
+            app:cardCornerRadius="@dimen/sw_40dp"
+            app:cardElevation="@dimen/sw_10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:id="@+id/mobileLoginLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <TextView
+                    android:id="@+id/mTitleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/sw_140dp"
+                    android:text="欢迎注册炳圣建工"
+                    android:textColor="#fff"
+                    android:textSize="@dimen/sw_42sp" />
+
+                <LinearLayout
+                    android:id="@+id/mAccountLayout"
+                    android:layout_width="@dimen/sw_600dp"
+                    android:layout_height="@dimen/sw_106dp"
+                    android:layout_marginTop="@dimen/sw_100dp"
+                    android:background="@drawable/bg_input_style1"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/sw_40dp"
+                    android:paddingRight="@dimen/sw_40dp">
+
+                    <EditText
+                        android:id="@+id/mInputAccountEditText"
+                        style="@style/TextLineStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:gravity="center"
+                        android:hint="请输入姓名"
+                        android:inputType="text"
+                        android:textColor="#ff9b9b9b"
+                        android:textColorHint="#ff9b9b9b"
+                        android:textSize="@dimen/sw_40sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/mPhoneLayout"
+                    android:layout_width="@dimen/sw_600dp"
+                    android:layout_height="@dimen/sw_106dp"
+                    android:layout_marginTop="@dimen/sw_100dp"
+                    android:background="@drawable/bg_input_style1"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/sw_40dp"
+                    android:paddingRight="@dimen/sw_40dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:text="+86"
+                        android:textColor="#ff4a4a4a"
+                        android:textSize="@dimen/sw_42sp" />
+
+                    <EditText
+                        android:id="@+id/mInputPhoneEditText"
+                        style="@style/TextLineStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="@dimen/sw_20dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:hint="请输入手机号"
+                        android:inputType="number"
+                        android:maxLength="11"
+                        android:textColor="#ff9b9b9b"
+                        android:textColorHint="#ff9b9b9b"
+                        android:textSize="@dimen/sw_40sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/mCodeLayout"
+                    android:layout_width="@dimen/sw_600dp"
+                    android:layout_height="@dimen/sw_106dp"
+                    android:layout_marginTop="@dimen/sw_56dp"
+                    android:background="@drawable/bg_input_style1"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/sw_40dp"
+                    android:paddingRight="@dimen/sw_40dp"
+                    android:visibility="gone">
+
+                    <EditText
+                        android:id="@+id/mInputYzmEditText"
+                        style="@style/TextLineStyle"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:digits="0123456789abcdefghigklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                        android:hint="请填写验证码"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:textColor="#ff9b9b9b"
+                        android:textColorHint="#ff9b9b9b"
+                        android:textSize="@dimen/sw_40sp" />
+
+                    <View
+                        android:layout_width="@dimen/sw_2dp"
+                        android:layout_height="match_parent"
+                        android:layout_margin="@dimen/sw_24dp"
+                        android:background="#ff979797" />
+
+                    <TextView
+                        android:id="@+id/mGetYzmRTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="获取验证码"
+                        android:textColor="#ff65b651"
+                        android:textSize="@dimen/sw_40sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/mSelectRoleLayout"
+                    android:layout_width="@dimen/sw_600dp"
+                    android:layout_height="@dimen/sw_106dp"
+                    android:layout_marginTop="@dimen/sw_56dp"
+                    android:background="@drawable/bg_input_style1"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/sw_40dp"
+                    android:paddingRight="@dimen/sw_40dp">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_style1"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        android:gravity="center"
+                        android:text="请选择角色"
+                        android:textColor="#9B9B9B"
+                        android:textSize="@dimen/sw_40sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/mNextStepLayout"
+                    android:layout_width="@dimen/sw_600dp"
+                    android:layout_height="@dimen/sw_106dp"
+                    android:layout_marginTop="@dimen/sw_56dp"
+                    android:gravity="center"
+                    android:visibility="gone">
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_style1"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        android:gravity="center"
+                        android:text="下一步"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="@dimen/sw_40sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/mRegisterLayout"
+                    android:layout_width="@dimen/sw_600dp"
+                    android:layout_height="@dimen/sw_106dp"
+                    android:layout_marginTop="@dimen/sw_56dp"
+                    android:gravity="center"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/mRegisterTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@drawable/btn_style1"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        android:gravity="center"
+                        android:text="立即注册"
+                        android:textColor="@color/colorAccent"
+                        android:textSize="@dimen/sw_40sp" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/mRoleRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/sw_400dp"
+                    android:visibility="gone" />
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sw_122dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintLeft_toLeftOf="@+id/content_layout"
+            app:layout_constraintRight_toRightOf="@+id/content_layout"
+            app:layout_constraintTop_toBottomOf="@+id/content_layout">
+
+
+            <com.ruffian.library.widget.RTextView
+                android:id="@+id/mAgreeCheckedTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/sw_40dp"
+                android:gravity="center_vertical"
+                android:text="请您阅读并同意 炳圣建工用户协议和隐私协议"
+                android:textColor="#ff4a4a4a"
+                android:textSize="@dimen/sw_40sp"
+                app:icon_normal_left="@drawable/batch_operate_option_n"
+                app:icon_selected_left="@drawable/batch_operate_option_s"
+                app:layout_constraintLeft_toLeftOf="@+id/mRegisterImmediatelyRTextView"
+                app:layout_constraintRight_toRightOf="@+id/mRegisterImmediatelyRTextView"
+                app:layout_constraintTop_toBottomOf="@+id/mRegisterImmediatelyRTextView" />
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

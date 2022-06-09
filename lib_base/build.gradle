@@ -1,0 +1,110 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-parcelize'
+}
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        pre{
+
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures  {
+        dataBinding  = true
+    }
+
+}
+
+dependencies {
+
+    //noinspection GradleDependency
+    api "org.jetbrains.kotlin:kotlin-stdlib:1.6.10"
+    api 'androidx.vectordrawable:vectordrawable:1.1.0'
+    api 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.0'
+    api 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0'
+    api 'androidx.navigation:navigation-fragment-ktx:2.3.5'
+    api 'androidx.navigation:navigation-ui-ktx:2.3.5'
+    api 'androidx.recyclerview:recyclerview:1.2.1'
+    api 'androidx.core:core-ktx:1.7.0'
+    api 'androidx.datastore:datastore:1.0.0'
+    api 'androidx.datastore:datastore-preferences:1.0.0'
+    // kotlin 协程
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0"
+    api 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0'
+    api 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
+    api 'androidx.appcompat:appcompat:1.4.1'
+    api 'com.google.android.material:material:1.4.0'
+    api 'androidx.constraintlayout:constraintlayout:2.1.1'
+    // adapter
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.7'
+    // 基础依赖包，必须要依赖
+    api 'com.gyf.immersionbar:immersionbar:3.0.0'
+    // fragment快速实现（可选）
+    api 'com.gyf.immersionbar:immersionbar-components:3.0.0'
+    // kotlin扩展（可选）
+    api 'com.gyf.immersionbar:immersionbar-ktx:3.0.0'
+    // tabLayout
+    api 'io.github.h07000223:flycoTabLayout:3.0.0'
+    // RWidgetHelper shape
+    api 'com.ruffian.library:RWidgetHelper-AndroidX:0.0.9'
+    // 核心必须依赖
+    api 'com.scwang.smart:refresh-layout-kernel:2.0.3'
+    // 经典刷新头
+    api 'com.scwang.smart:refresh-header-classics:2.0.3'
+    // 雷达刷新头
+    api 'com.scwang.smart:refresh-header-radar:2.0.3'
+    // 虚拟刷新头
+    api 'com.scwang.smart:refresh-header-falsify:2.0.3'
+    // 谷歌刷新头
+    api 'com.scwang.smart:refresh-header-material:2.0.3'
+    // 二级刷新头
+    api 'com.scwang.smart:refresh-header-two-level:2.0.3'
+    // 球脉冲加载
+    api 'com.scwang.smart:refresh-footer-ball:2.0.3'
+    // 经典加载
+    api 'com.scwang.smart:refresh-footer-classics:2.0.3'
+    // 网络请求
+    api 'com.squareup.retrofit2:retrofit:2.9.0'
+    api 'com.squareup.okhttp3:okhttp:4.9.2'
+    api 'com.squareup.retrofit2:converter-gson:2.9.0'
+    api 'com.squareup.retrofit2:adapter-rxjava3:2.9.0'
+    api 'com.trello.rxlifecycle4:rxlifecycle:4.0.2'
+    api 'com.trello.rxlifecycle4:rxlifecycle-components:4.0.2'
+    api 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2'
+    // 图片
+    api 'com.github.bumptech.glide:glide:4.12.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.12.0'
+    api "com.github.bumptech.glide:okhttp3-integration:4.12.0"
+    // banner
+    api 'com.youth.banner:banner:2.1.0'
+    // gson
+    api 'com.google.code.gson:gson:2.8.8'
+    // event bus
+    api 'org.greenrobot:eventbus:3.3.1'
+
+    api 'androidx.multidex:multidex:2.0.1'
+
+    api 'com.github.gzu-liyujiang.AndroidPicker:Common:4.1.6'
+    api 'com.github.gzu-liyujiang.AndroidPicker:WheelView:4.1.6'
+    api 'com.github.gzu-liyujiang.AndroidPicker:WheelPicker:4.1.6'
+}

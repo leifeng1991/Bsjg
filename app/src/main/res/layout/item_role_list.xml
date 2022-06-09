@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/base_bg_transparent"
+        android:descendantFocusability="beforeDescendants">
+
+        <LinearLayout
+            android:id="@+id/mRootLayout"
+            android:layout_width="@dimen/sw_600dp"
+            android:layout_height="@dimen/sw_106dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/sw_56dp"
+            android:background="@drawable/bg_input_style1"
+            android:gravity="center"
+            android:paddingLeft="@dimen/sw_40dp"
+            android:paddingRight="@dimen/sw_40dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/mRTextView"
+                style="@style/TextLineStyle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:gravity="center"
+                android:hint="请输入姓名"
+                android:inputType="text"
+                android:textColor="#ff9b9b9b"
+                android:textColorHint="#ff9b9b9b"
+                android:textSize="@dimen/sw_38sp" />
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

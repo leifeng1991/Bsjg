@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".ui.RightsOfAdministratorsActivity">
+
+        <com.ruffian.library.widget.RTextView
+            android:id="@+id/mBackTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sw_120dp"
+            android:layout_marginTop="@dimen/sw_146dp"
+            android:paddingStart="@dimen/sw_140dp"
+            android:paddingTop="@dimen/sw_20dp"
+            android:paddingEnd="@dimen/sw_140dp"
+            android:paddingBottom="@dimen/sw_20dp"
+            android:text="返回"
+            android:textColor="#ff65b651"
+            android:textSize="@dimen/sw_60sp"
+            app:background_normal="@color/white"
+            app:border_color_normal="#65B651"
+            app:border_width_normal="@dimen/sw_4dp"
+            app:corner_radius="@dimen/sw_10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/mHeaderTitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="管理员权限"
+            android:textColor="#ff333333"
+            android:textSize="@dimen/sw_90sp"
+            app:layout_constraintBottom_toBottomOf="@+id/mBackTextView"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/mBackTextView" />
+
+        <com.ruffian.library.widget.RTextView
+            android:id="@+id/mLicensePlateBindingRTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:minWidth="@dimen/sw_536dp"
+            android:paddingTop="@dimen/sw_102dp"
+            android:paddingBottom="@dimen/sw_102dp"
+            android:text="车牌绑定"
+            android:textColor="#ff65b651"
+            android:textSize="@dimen/sw_90sp"
+            app:background_normal="@color/white"
+            app:border_color_normal="#65B651"
+            app:border_width_normal="@dimen/sw_4dp"
+            app:corner_radius="@dimen/sw_40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/mLicensePlateUnbindingRTextView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.ruffian.library.widget.RTextView
+            android:id="@+id/mLicensePlateUnbindingRTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/sw_130dp"
+            android:layout_marginEnd="@dimen/sw_130dp"
+            android:gravity="center"
+            android:minWidth="@dimen/sw_536dp"
+            android:paddingTop="@dimen/sw_102dp"
+            android:paddingBottom="@dimen/sw_102dp"
+            android:text="车牌解绑"
+            android:textColor="#ff65b651"
+            android:textSize="@dimen/sw_90sp"
+            app:background_normal="@color/white"
+            app:border_color_normal="#65B651"
+            app:border_width_normal="@dimen/sw_4dp"
+            app:corner_radius="@dimen/sw_40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/mLicensePlateBindingRTextView"
+            app:layout_constraintRight_toLeftOf="@+id/mOtherRTextView"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.ruffian.library.widget.RTextView
+            android:id="@+id/mOtherRTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:minWidth="@dimen/sw_536dp"
+            android:paddingStart="@dimen/sw_140dp"
+            android:paddingTop="@dimen/sw_102dp"
+            android:paddingEnd="@dimen/sw_140dp"
+            android:paddingBottom="@dimen/sw_102dp"
+            android:text="其他"
+            android:textColor="#ff65b651"
+            android:textSize="@dimen/sw_90sp"
+            app:background_normal="@color/white"
+            app:border_color_normal="#65B651"
+            app:border_width_normal="@dimen/sw_4dp"
+            app:corner_radius="@dimen/sw_40dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/mLicensePlateUnbindingRTextView"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
